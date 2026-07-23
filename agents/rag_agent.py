@@ -1,10 +1,11 @@
 import logging
 from typing import Dict, Any, List, Optional
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.documents import Document
 from agents.document_grader import DocumentGrader
+from config import LLM_MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +23,7 @@ class RAGAgent:
             vector_store_manager: Gestor del almacén de vectores.
         """
         self.vector_store_manager = vector_store_manager
-        self.llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.1)
+        self.llm = ChatOpenAI(model=LLM_MODEL, temperature=0.1)
         self.document_grader = DocumentGrader()
         
         # Sistema de prompt en español según los requerimientos

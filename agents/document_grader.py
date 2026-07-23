@@ -1,8 +1,9 @@
 import logging
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+from config import LLM_MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -13,8 +14,8 @@ class DocumentGrader:
     """
 
     def __init__(self):
-        """Inicializa el evaluador de documentos con el modelo de Gemini."""
-        self.llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0)
+        """Inicializa el evaluador de documentos con el modelo de OpenAI."""
+        self.llm = ChatOpenAI(model=LLM_MODEL, temperature=0)
         
         # Prompt para evaluar la relevancia del documento
         self.prompt = ChatPromptTemplate.from_messages(

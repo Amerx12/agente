@@ -18,7 +18,7 @@ Aceptamos tarjetas de crédito y débito (Visa, MasterCard, American Express), P
 Absolutamente. Utilizamos encriptación SSL de 256 bits y nuestros procesos de pago cumplen con los estándares PCI-DSS. No almacenamos los datos completos de tu tarjeta.
 
 **6. ¿Puedo pagar a meses sin intereses (MSI)?**
-Sí, ofrecemos hasta 12 MSI en compras superiores a $2,500 MXN con tarjetas de crédito participantes.
+Sí, ofrecemos hasta 12 MSI en compras superiores a $150 USD con tarjetas de crédito participantes.
 
 ## Tiempos de Envío
 **7. ¿Cuánto tiempo tarda en llegar mi pedido?**
@@ -45,7 +45,7 @@ La garantía no cubre daños por mal uso, golpes, derrames de líquidos, modific
 Sí, tienes 30 días naturales a partir de la recepción del pedido para solicitar una devolución.
 
 **14. ¿Las devoluciones tienen algún costo?**
-Si el producto es defectuoso, la devolución es gratuita. Si es por cambio de opinión, se deducirá una tarifa de envío de $150 MXN.
+Si el producto es defectuoso, la devolución es gratuita. Si es por cambio de opinión, se deducirá una tarifa de envío de $15 USD.
 
 **15. ¿Cuánto tarda el reembolso?**
 Una vez aprobado, el reembolso tarda entre 5 y 10 días hábiles en reflejarse en tu estado de cuenta, dependiendo de tu banco.

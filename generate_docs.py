@@ -107,7 +107,7 @@ def generar_politica_reembolso():
     doc.add_paragraph('Una vez recibida e inspeccionada tu devolución, te enviaremos un correo electrónico notificándote la aprobación o rechazo. Si es aprobado, el reembolso se procesará y se aplicará automáticamente a tu tarjeta de crédito o método de pago original en un plazo de 5 a 10 días hábiles. Si elegiste cambio, el nuevo producto será despachado inmediatamente.')
     
     doc.add_heading('Gastos de Envío en Devolución', level=1)
-    doc.add_paragraph('Si la devolución es por defecto de fábrica o error nuestro, AmershOp cubrirá el 100% de los gastos de envío. Si la devolución es por cambio de opinión o error del cliente al elegir el producto, se descontará una tarifa plana de $150 MXN del total a reembolsar por concepto de envío.')
+    doc.add_paragraph('Si la devolución es por defecto de fábrica o error nuestro, AmershOp cubrirá el 100% de los gastos de envío. Si la devolución es por cambio de opinión o error del cliente al elegir el producto, se descontará una tarifa plana de $15 USD del total a reembolsar por concepto de envío.')
     
     doc.save(filename)
     print(f"Generado: {filename}")
@@ -135,7 +135,7 @@ Aceptamos tarjetas de crédito y débito (Visa, MasterCard, American Express), P
 Absolutamente. Utilizamos encriptación SSL de 256 bits y nuestros procesos de pago cumplen con los estándares PCI-DSS. No almacenamos los datos completos de tu tarjeta.
 
 **6. ¿Puedo pagar a meses sin intereses (MSI)?**
-Sí, ofrecemos hasta 12 MSI en compras superiores a $2,500 MXN con tarjetas de crédito participantes.
+Sí, ofrecemos hasta 12 MSI en compras superiores a $150 USD con tarjetas de crédito participantes.
 
 ## Tiempos de Envío
 **7. ¿Cuánto tiempo tarda en llegar mi pedido?**
@@ -162,7 +162,7 @@ La garantía no cubre daños por mal uso, golpes, derrames de líquidos, modific
 Sí, tienes 30 días naturales a partir de la recepción del pedido para solicitar una devolución.
 
 **14. ¿Las devoluciones tienen algún costo?**
-Si el producto es defectuoso, la devolución es gratuita. Si es por cambio de opinión, se deducirá una tarifa de envío de $150 MXN.
+Si el producto es defectuoso, la devolución es gratuita. Si es por cambio de opinión, se deducirá una tarifa de envío de $15 USD.
 
 **15. ¿Cuánto tarda el reembolso?**
 Una vez aprobado, el reembolso tarda entre 5 y 10 días hábiles en reflejarse en tu estado de cuenta, dependiendo de tu banco.
@@ -229,32 +229,32 @@ def generar_guia_envios():
         <tr>
             <td>Envío Estándar Local</td>
             <td>1 - 2 días hábiles</td>
-            <td>$89 MXN</td>
+            <td>$5 USD</td>
             <td>Entrega económica en el área local.</td>
         </tr>
         <tr>
             <td>Envío Estándar Nacional</td>
             <td>3 - 5 días hábiles</td>
-            <td>$129 MXN</td>
+            <td>$7 USD</td>
             <td>Entrega confiable a nivel nacional vía paqueterías socias.</td>
         </tr>
         <tr>
             <td>Envío Express Local</td>
             <td>Mismo día (pedidos antes de 12pm)</td>
-            <td>$149 MXN</td>
+            <td>$10 USD</td>
             <td>Entrega urgente en motocicleta o van dedicada.</td>
         </tr>
         <tr>
             <td>Envío Express Nacional</td>
             <td>1 - 2 días hábiles</td>
-            <td>$249 MXN</td>
+            <td>$15 USD</td>
             <td>Envío aéreo prioritario a nivel nacional.</td>
         </tr>
     </table>
 
     <div class="highlight">
         <h3>¡Envío Gratuito!</h3>
-        <p>Disfruta de <strong>ENVÍO ESTÁNDAR GRATIS</strong> en todas tus compras superiores a <strong>$999 MXN</strong>. El descuento se aplicará automáticamente en el carrito de compras.</p>
+        <p>Disfruta de <strong>ENVÍO ESTÁNDAR GRATIS</strong> en todas tus compras superiores a <strong>$50 USD</strong>. El descuento se aplicará automáticamente en el carrito de compras.</p>
     </div>
 
     <h2>3. Rastreo de Pedidos</h2>
@@ -373,23 +373,23 @@ def generar_precios_envio():
     headers = ["Zona", "Peso_Min_kg", "Peso_Max_kg", "Costo_Estandar", "Costo_Express", "Tiempo_Estandar_Dias", "Tiempo_Express_Dias"]
     
     data = [
-        ["Local", 0.0, 1.0, 89.0, 149.0, 2, 1],
-        ["Local", 1.01, 5.0, 119.0, 189.0, 2, 1],
-        ["Local", 5.01, 15.0, 159.0, 259.0, 2, 1],
-        ["Local", 15.01, 30.0, 250.0, 400.0, 3, 2],
-        ["Local", 30.01, 999.0, 400.0, 650.0, 3, 2],
+        ["Local", 0.0, 1.0, 5.0, 10.0, 2, 1],
+        ["Local", 1.01, 5.0, 7.0, 12.0, 2, 1],
+        ["Local", 5.01, 15.0, 10.0, 15.0, 2, 1],
+        ["Local", 15.01, 30.0, 15.0, 25.0, 3, 2],
+        ["Local", 30.01, 999.0, 25.0, 40.0, 3, 2],
         
-        ["Nacional_Cercano", 0.0, 1.0, 129.0, 249.0, 3, 1],
-        ["Nacional_Cercano", 1.01, 5.0, 169.0, 329.0, 3, 2],
-        ["Nacional_Cercano", 5.01, 15.0, 229.0, 459.0, 4, 2],
-        ["Nacional_Cercano", 15.01, 30.0, 350.0, 700.0, 5, 3],
-        ["Nacional_Cercano", 30.01, 999.0, 600.0, 1200.0, 5, 4],
+        ["Nacional_Cercano", 0.0, 1.0, 7.0, 15.0, 3, 1],
+        ["Nacional_Cercano", 1.01, 5.0, 10.0, 20.0, 3, 2],
+        ["Nacional_Cercano", 5.01, 15.0, 15.0, 30.0, 4, 2],
+        ["Nacional_Cercano", 15.01, 30.0, 25.0, 50.0, 5, 3],
+        ["Nacional_Cercano", 30.01, 999.0, 40.0, 80.0, 5, 4],
         
-        ["Nacional_Lejano", 0.0, 1.0, 159.0, 299.0, 5, 2],
-        ["Nacional_Lejano", 1.01, 5.0, 209.0, 399.0, 5, 2],
-        ["Nacional_Lejano", 5.01, 15.0, 289.0, 559.0, 6, 3],
-        ["Nacional_Lejano", 15.01, 30.0, 450.0, 900.0, 7, 4],
-        ["Nacional_Lejano", 30.01, 999.0, 800.0, 1500.0, 8, 5],
+        ["Nacional_Lejano", 0.0, 1.0, 10.0, 20.0, 5, 2],
+        ["Nacional_Lejano", 1.01, 5.0, 15.0, 25.0, 5, 2],
+        ["Nacional_Lejano", 5.01, 15.0, 20.0, 35.0, 6, 3],
+        ["Nacional_Lejano", 15.01, 30.0, 30.0, 60.0, 7, 4],
+        ["Nacional_Lejano", 30.01, 999.0, 50.0, 100.0, 8, 5],
     ]
     
     with open(filename, 'w', newline='', encoding='utf-8') as f:
@@ -410,7 +410,7 @@ def generar_config_tienda():
             "horario_atencion": "Lunes a Viernes 09:00 - 18:00, Sábados 10:00 - 14:00"
         },
         "configuracion_regional": {
-            "moneda": "MXN",
+            "moneda": "USD",
             "simbolo_moneda": "$",
             "impuesto_iva_porcentaje": 16,
             "idioma_por_defecto": "es-MX"
@@ -434,7 +434,7 @@ def generar_config_tienda():
         "politicas": {
             "dias_limite_devolucion": 30,
             "dias_garantia_base": 365,
-            "costo_reestocaje_devolucion": 150.00
+            "costo_reestocaje_devolucion": 15.00
         }
     }
     with open(filename, 'w', encoding='utf-8') as f:

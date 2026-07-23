@@ -7,7 +7,7 @@
         "horario_atencion": "Lunes a Viernes 09:00 - 18:00, Sábados 10:00 - 14:00"
     },
     "configuracion_regional": {
-        "moneda": "MXN",
+        "moneda": "USD",
         "simbolo_moneda": "$",
         "impuesto_iva_porcentaje": 16,
         "idioma_por_defecto": "es-MX"
@@ -36,6 +36,6 @@
     "politicas": {
         "dias_limite_devolucion": 30,
         "dias_garantia_base": 365,
-        "costo_reestocaje_devolucion": 150.0
+        "costo_reestocaje_devolucion": 15.0
     }
 }

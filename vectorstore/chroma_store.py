@@ -10,7 +10,7 @@ from typing import List
 from pathlib import Path
 
 from langchain_core.documents import Document
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # Configuración del registro de eventos (logging)
@@ -37,13 +37,13 @@ class VectorStoreManager:
         self.index_path = os.path.join(persist_directory, f"{collection_name}.faiss")
         self.docs_path = os.path.join(persist_directory, f"{collection_name}_docs.pkl")
 
-        # Verificar la clave de API de Google
-        if 'GOOGLE_API_KEY' not in os.environ:
-            logger.warning("La variable de entorno GOOGLE_API_KEY no está configurada.")
+        # Verificar la clave de API de OpenAI
+        if 'OPENAI_API_KEY' not in os.environ:
+            logger.warning("OPENAI_API_KEY no encontrada en las variables de entorno.")
 
         try:
-            # Inicializar las incrustaciones de Google (embeddings)
-            self.embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+            # Inicializar las incrustaciones de OpenAI (embeddings)
+            self.embeddings = OpenAIEmbeddings()
 
             # Configurar el divisor de texto
             self.text_splitter = RecursiveCharacterTextSplitter(
