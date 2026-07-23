@@ -13,7 +13,7 @@ _env_path = Path(__file__).resolve().parent / ".env"
 load_dotenv(dotenv_path=_env_path)
 
 # --- Configuración General ---
-STORE_NAME = os.getenv("STORE_NAME", "AmershOp")
+STORE_NAME = os.getenv("STORE_NAME", "Amershop")
 APP_TITLE = f"🛒 {STORE_NAME} — Asistente IA Corporativo"
 APP_ICON = "🛒"
 APP_DESCRIPTION = (
@@ -21,9 +21,10 @@ APP_DESCRIPTION = (
     "Responde preguntas basándose en los documentos internos de la empresa."
 )
 
-# --- Configuración del LLM ---
+# --- Configuración del LLM y OAuth ---
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 HF_TOKEN = os.getenv("HF_TOKEN", "")
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
 LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
 LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.3"))
