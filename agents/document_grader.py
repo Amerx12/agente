@@ -1,5 +1,5 @@
 import logging
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -15,7 +15,7 @@ class DocumentGrader:
 
     def __init__(self):
         """Inicializa el evaluador de documentos con el modelo de OpenAI."""
-        self.llm = ChatOpenAI(model=LLM_MODEL, temperature=0)
+        self.llm = ChatGroq(model_name=LLM_MODEL, temperature=0)
         
         # Prompt para evaluar la relevancia del documento
         self.prompt = ChatPromptTemplate.from_messages(

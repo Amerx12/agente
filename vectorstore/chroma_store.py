@@ -10,8 +10,9 @@ from typing import List
 from pathlib import Path
 
 from langchain_core.documents import Document
-from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from config import EMBEDDING_MODEL
 
 # Configuración del registro de eventos (logging)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -37,13 +38,9 @@ class VectorStoreManager:
         self.index_path = os.path.join(persist_directory, f"{collection_name}.faiss")
         self.docs_path = os.path.join(persist_directory, f"{collection_name}_docs.pkl")
 
-        # Verificar la clave de API de OpenAI
-        if 'OPENAI_API_KEY' not in os.environ:
-            logger.warning("OPENAI_API_KEY no encontrada en las variables de entorno.")
-
         try:
-            # Inicializar las incrustaciones de OpenAI (embeddings)
-            self.embeddings = OpenAIEmbeddings()
+            # Inicializar FastEmbed (local, súper ligero, sin PyTorch)
+            self.embeddings = FastEmbedEmbeddings()
 
             # Configurar el divisor de texto
             self.text_splitter = RecursiveCharacterTextSplitter(

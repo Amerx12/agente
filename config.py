@@ -22,9 +22,10 @@ APP_DESCRIPTION = (
 )
 
 # --- Configuración del LLM ---
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+HF_TOKEN = os.getenv("HF_TOKEN", "")
+LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
 LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.3"))
 
 # --- Configuración del Vector Store ---

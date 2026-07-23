@@ -19,7 +19,7 @@ st.set_page_config(
     layout="wide",
 )
 
-from config import OPENAI_API_KEY, DOCUMENTS_DIR
+from config import GROQ_API_KEY, DOCUMENTS_DIR
 from vectorstore.chroma_store import VectorStoreManager
 from agents.rag_agent import RAGAgent
 
@@ -150,8 +150,8 @@ def render_sidebar():
 # MAIN
 # ============================================================
 def main():
-    if not OPENAI_API_KEY:
-        st.error("⚠️ API Key de OpenAI no configurada en el archivo .env")
+    if not GROQ_API_KEY:
+        st.error("⚠️ API Key de Groq no configurada en el archivo .env")
         st.stop()
 
     try:
@@ -212,11 +212,12 @@ def main():
         with st.chat_message("assistant", avatar="🐉"):
             with st.spinner("Buscando respuesta..."):
                 try:
-                    chat_history = [
-                        (st.session_state["messages"][i]["content"], st.session_state["messages"][i+1]["content"])
-                        for i in range(len(st.session_state["messages"]) - 2)
-                        if st.session_state["messages"][i]["role"] == "user"
-                    ][-5:]
+                    # Formatear el historial para LangChain: [("human", "msg"), ("ai", "msg")]
+                    chat_history = []
+                    for m in st.session_state["messages"][:-1]:
+                        role = "human" if m["role"] == "user" else "ai"
+                        chat_history.append((role, m["content"]))
+                    chat_history = chat_history[-10:]
 
                     result = agent.query(question=prompt, chat_history=chat_history)
                     
