@@ -81,7 +81,7 @@ La solución sigue un patrón RAG desacoplado de 3 capas: **Frontend**, **Agente
 
 ---
 
-## 🚀 4. Instrucciones para Ejecutar el Proyecto
+## 🚀 4. Instrucciones para Ejecutar el Proyecto y Despliegue Cloud
 
 ### Opción A: Ejecución Local
 
@@ -123,7 +123,9 @@ La solución sigue un patrón RAG desacoplado de 3 capas: **Frontend**, **Agente
    - Instancia: Ubuntu 22.04 LTS (Shape `VM.Standard.E2.1.Micro` o `A1.Flex`).
    - Abre el puerto `8501` en las reglas de entrada del VCN (Ingress Rules: TCP `8501`).
 
-2. **Configurar el Servidor Linux (SSH):**
+![Configuración de Reglas de Entrada (Ingress Rules) en Oracle Cloud OCI](./assets/demo_oracle_ingress.png)
+
+2. **Configurar el Servidor Linux (SSH) e Iniciar Servicio:**
    ```bash
    sudo apt update && sudo apt install python3-pip git -y
    git clone https://github.com/TU_USUARIO/agente.git
@@ -138,7 +140,8 @@ La solución sigue un patrón RAG desacoplado de 3 capas: **Frontend**, **Agente
    sudo iptables -P INPUT ACCEPT
    nohup python3 -m streamlit run app.py --server.port 8501 --server.headless true &
    ```
-   Accede desde tu navegador a `http://TU_IP_PUBLICA:8501`.
+
+![Ejecución del servicio Streamlit y verificación de IP en Terminal OCI](./assets/demo_deploy_terminal.png)
 
 ---
 
