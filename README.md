@@ -16,48 +16,17 @@
 
 ## 📸 Capturas de Pantalla y Evidencia Visual
 
-### 🔐 1. Pantalla de Inicio de Sesión y Autenticación
-> *Interfaz Neón Glassmorphism con selección de cuenta y Google Identity Services (GIS):*
-
-![Interfaz de Login y Autenticación](./assets/demo_login.png)
+![Pantalla de Login - Parte Superior](./assets/demo_login_top.png)
 
 ---
 
-### 💬 2. Interfaz Principal de Chat y Cartel LED 24/7
-> *Chat de respuestas RAG con indicador de estado animado en vivo:*
-
-![Chat Principal & Cartel LED 24/7](./assets/demo_chat.png)
-
----
-
-### ☁️ 3. Ejecución en Servidor Oracle Cloud (OCI)
-> *Logs del proceso `nohup`, asignación de IP Pública y ejecución continua:*
-
-![Despliegue y Ejecución en Oracle Cloud](./assets/demo_deploy_terminal.png)
-
----
-
-### 🛡️ 4. Configuración de Reglas de Seguridad en OCI
-> *Configuración de Ingress Rules para permitir tráfico en el puerto `8501`:*
-
-![Reglas de Seguridad OCI](./assets/demo_oracle_ingress.png)
+![Pantalla de Login - Opciones y GIS](./assets/demo_login_bottom.png)
 
 ---
 
 ## 📋 1. Descripción General del Proyecto
 
 **Amershop IA** es una plataforma corporativa de asistencia inteligente basada en una arquitectura **RAG (Retrieval-Augmented Generation)**. Su propósito principal es brindar soporte instantáneo, preciso y fundamentado a colaboradores y clientes sobre las políticas internas, envíos, métodos de pago, devoluciones y catálogo de productos de la tienda online de tecnología Amershop.
-
-### 🌟 Características Principales
-- 🤖 **Respuesta en Lenguaje Natural:** Consultas fluidas potenciadas por el modelo **Groq (LLaMA 3.1 8B Instant)**.
-- 📄 **Soporte Multiformato (8 tipos de archivos):** Procesa e indexa archivos PDF, DOCX, XLSX, PPTX, MD, CSV, JSON y HTML.
-- 🔐 **Autenticación Flexible:**
-  - **Google Identity Services (GIS):** Integración con el SDK oficial de inicio de sesión con Google.
-  - **Acceso Corporativo:** Formulario con credenciales de usuario.
-  - **Acceso Invitado:** Entrada directa para pruebas sin registro.
-- 🚨 **Cartel LED 24/7 Animado:** Indicador visual en tiempo real de disponibilidad continua.
-- 🎨 **Diseño Galaxia Glassmorphism:** Tema oscuro profesional con fondo espacial, bordes redondeados y efectos neón traslúcidos.
-- 📌 **Citación Transparente de Fuentes:** Cada respuesta fundamentada indica los documentos de donde proviene la información.
 
 ---
 
@@ -173,56 +142,17 @@ La solución sigue un patrón RAG desacoplado de 3 capas: **Frontend**, **Agente
 
 ---
 
-## ❓ 5. Ejemplos de Preguntas que el Agente Puede Responder
+## ❓ 5. Ejemplos de Preguntas y Respuestas que el Agente Puede Responder
 
-El agente está capacitado para responder preguntas sobre la tienda basadas en la base de conocimiento cargada en `documents/`:
-
-1. **Preguntas sobre Envíos y Tiempos:**
-   - *"¿Cuánto tarda en llegar un pedido con envío express?"*
-   - *"¿Realizan envíos internacionales?"*
-   - *"¿Cuáles son las tarifas de envío para pedidos menores a $50 USD?"*
-
-2. **Preguntas sobre Políticas de Devolución y Garantía:**
-   - *"¿Cuál es la política de devoluciones de la tienda?"*
-   - *"¿Qué hago si mi producto llega dañado o defectuoso?"*
-   - *"¿Cuántos días tengo para solicitar un reembolso?"*
-
-3. **Preguntas sobre Métodos de Pago y Precios:**
-   - *"¿Qué métodos de pago aceptan en Amershop?"*
-   - *"¿Ofrecen pagos a meses sin intereses (MSI)?"*
-   - *"¿En qué moneda están expresados todos los precios?"*
+![Ejemplo de Preguntas Frecuentes Sugeridas e Interfaz de Inicio de Chat](./assets/ejemplo_preguntas_1.png)
 
 ---
 
-## 💬 6. Ejemplos de Respuestas Generadas por el Agente
-
-### Ejemplo 1: Consulta sobre Envíos Express
-> **Usuario:** *"¿Cuánto tarda el envío express y cuánto cuesta?"*
-> 
-> **Amershop IA:** 
-> El envío express tarda de **1 a 2 días hábiles** en entregarse, dependiendo de tu código postal. 
-> Tiene un costo de **$12 USD** para pedidos estándar o es **gratuito** en compras superiores a $150 USD.
-> 
-> *Fuentes: [guia_envios.html], [precios_envio.csv]*
+![Ejemplo de Respuestas Generadas - Moneda y Catálogo](./assets/ejemplo_respuestas_1.png)
 
 ---
 
-### Ejemplo 2: Consulta sobre Políticas de Devolución
-> **Usuario:** *"¿Puedo devolver una laptop si no me gustó y cuánto tiempo tengo?"*
-> 
-> **Amershop IA:** 
-> Sí, dispones de **30 días naturales** a partir de la recepción de tu pedido para solicitar una devolución. 
-> Ten en cuenta que si la devolución es por cambio de opinión (y no por fallo técnico), se descontará una tarifa fija de **$15 USD** del total a reembolsar por concepto de gastos de envío.
-> 
-> *Fuentes: [politica_reembolso.docx], [faq.md]*
-
----
-
-### Ejemplo 3: Manejo de Preguntas Fuera de Dominio
-> **Usuario:** *"¿Quién ganó el último mundial de fútbol?"*
-> 
-> **Amershop IA:** 
-> No encontré información sobre este tema en los documentos disponibles. Te sugiero consultar con el área correspondiente.
+![Ejemplo de Respuestas Generadas - Horario de Atención](./assets/ejemplo_respuestas_2.png)
 
 ---
 
