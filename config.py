@@ -22,7 +22,7 @@ APP_DESCRIPTION = (
 )
 
 # --- Configuración del LLM y OAuth ---
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+COHERE_API_KEY = os.getenv("COHERE_API_KEY", "")
 HF_TOKEN = os.getenv("HF_TOKEN", "")
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
 LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")

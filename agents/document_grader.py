@@ -1,9 +1,10 @@
 import logging
 from langchain_groq import ChatGroq
+from langchain_cohere import ChatCohere
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from config import LLM_MODEL
+from config import LLM_MODEL, COHERE_API_KEY
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +16,7 @@ class DocumentGrader:
 
     def __init__(self):
         """Inicializa el evaluador de documentos con el modelo de OpenAI."""
-        self.llm = ChatGroq(model_name=LLM_MODEL, temperature=0)
+        self.llm = ChatCohere(cohere_api_key=COHERE_API_KEY, temperature=0)
         
         # Prompt para evaluar la relevancia del documento
         self.prompt = ChatPromptTemplate.from_messages(

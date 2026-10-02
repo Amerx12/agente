@@ -1,11 +1,12 @@
 import logging
 from typing import Dict, Any, List, Optional
 from langchain_groq import ChatGroq
+from langchain_cohere import ChatCohere
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.documents import Document
 from agents.document_grader import DocumentGrader
-from config import LLM_MODEL
+from config import LLM_MODEL, COHERE_API_KEY
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +24,7 @@ class RAGAgent:
             vector_store_manager: Gestor del almacén de vectores.
         """
         self.vector_store_manager = vector_store_manager
-        self.llm = ChatGroq(model_name=LLM_MODEL, temperature=0.1)
+        self.llm = ChatCohere(api=COHERE_API_KEY, temperature=0.1)
         self.document_grader = DocumentGrader()
         
         # Sistema de prompt en español según los requerimientos
