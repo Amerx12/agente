@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./Backend
+    container_name: agente_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Backend:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      # Aquí puedes añadir tu clave de OpenAI o las variables del archivo .env
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+  frontend:
+    build: 
+      context: ./frontend
+    container_name: agente_frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - backend
