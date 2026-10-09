@@ -19,7 +19,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-from config import GROQ_API_KEY, DOCUMENTS_DIR, GOOGLE_CLIENT_ID
+from config import COHERE_API_KEY, DOCUMENTS_DIR, GOOGLE_CLIENT_ID
 import streamlit.components.v1 as components
 from vectorstore.chroma_store import VectorStoreManager
 from agents.rag_agent import RAGAgent
@@ -372,7 +372,7 @@ def render_login():
 # MAIN
 # ============================================================
 def main():
-    if not GROQ_API_KEY:
+    if not COHERE_API_KEY:
         st.error("⚠️ API Key de Groq no configurada en el archivo .env")
         st.stop()
 

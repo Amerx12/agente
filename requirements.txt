@@ -6,3 +6,11 @@ fastembed>=0.2.0
 faiss-cpu>=1.7.4
 python-dotenv>=1.0.0
 PyPDF2>=3.0.0
+pypdf
+python-docx
+langchain-text-splitters
+python-pptx
+beautifulsoup4
+tabulate
+openpyxl
+langchain-cohere
